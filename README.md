@@ -3,6 +3,10 @@
 ## Quick Start
 
 ```
+npm install
+```
+then
+```
 npm start
 ```
 or
