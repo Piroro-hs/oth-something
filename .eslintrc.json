@@ -1,0 +1,51 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": ["airbnb", "plugin:fp/recommended"],
+  "plugins": ["fp"],
+  "rules": {
+    "arrow-spacing": 2,
+    "block-spacing": [2, "never"],
+    "indent": [2, 2, {
+      "SwitchCase": 0,
+      "VariableDeclarator": 1,
+      "outerIIFEBody": 1,
+      "MemberExpression": 1
+    }],
+    "max-len": [2, 100, 2, {
+      "ignoreComments": false,
+      "ignoreTrailingComments": true,
+      "ignoreUrls": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true,
+      "ignoreRegExpLiterals": true
+    }],
+    "no-confusing-arrow": 1,
+    "no-invalid-this": 2,
+    "no-nested-ternary": 0,
+    "object-curly-spacing": [2, "never"],
+    "require-yield": 2,
+    /*"sort-imports": [1, {"ignoreCase": true}],
+    "sort-keys": [1, "asc", {"natural": true}],*/
+    "fp/no-mutating-methods": 0,
+    "fp/no-mutation": [2, {
+      "commonjs": true,
+      "allowThis": true,
+      "exceptions": [
+        {"property": "defaultProps"},
+        {"property": "propTypes"}
+      ]
+    }],
+    "fp/no-nil": 0,
+    "fp/no-unused-expression": 0,
+    "import/extensions": [2, "never"],
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-boolean-value": [2, "always"],
+    "react/jsx-filename-extension": [2, {"extensions": [".js", ".jsx"]}]
+  }
+}

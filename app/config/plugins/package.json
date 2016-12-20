@@ -1,0 +1,9 @@
+{
+  "name": "oth-plugins",
+  "version": "0.1.0",
+  "author": "Piroro-hs",
+  "dependencies": {
+    "oth-ai-default": "0.1.0",
+    "oth-ai-random": "0.1.0"
+  }
+}

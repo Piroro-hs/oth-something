@@ -1,0 +1,53 @@
+{
+  "name": "oth-something",
+  "description": "## Quick Start",
+  "version": "0.1.0",
+  "author": "Piroro-hs",
+  "bugs": {
+    "url": "https://github.com/Piroro-hs/oth-something/issues"
+  },
+  "dependencies": {
+    "electron-menu-react": "^0.1.0",
+    "fs-extra": "^1.0.0",
+    "glamor": "^2.18.2",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0",
+    "react-redux": "^4.4.6",
+    "redux": "^3.6.0",
+    "redux-observable": "^0.12.2",
+    "redux-stack": "^1.0.1",
+    "rxjs": "^5.0.0-rc.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-env": "0.0.8",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-3": "^6.17.0",
+    "electron": "^1.4.7",
+    "electron-devtools-installer": "^2.0.1",
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-fp": "^2.2.0",
+    "eslint-plugin-import": "^2.1.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.6.0",
+    "fs-extra": "^1.0.0",
+    "json-loader": "^0.5.4",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "homepage": "https://github.com/Piroro-hs/oth-something#readme",
+  "license": "MIT",
+  "main": "app/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Piroro-hs/oth-something.git"
+  },
+  "scripts": {
+    "build": "node build",
+    "electron": "electron .",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
