@@ -1,5 +1,7 @@
-const {app, BrowserWindow} = require('electron');
 const {join} = require('path');
+
+const {app, BrowserWindow} = require('electron');
+
 const {accessSync: access, copySync: copy} = require('fs-extra');
 
 // const {default: installExtension, REDUX_DEVTOOLS} = require('electron-devtools-installer');

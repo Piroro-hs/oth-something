@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+
 import {merge, style} from 'glamor';
 
 function noop() {

@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+
 import {keyframes, merge, style} from 'glamor';
 
 import Cell from './Cell';

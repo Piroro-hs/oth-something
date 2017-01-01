@@ -1,7 +1,9 @@
-import {remote, shell} from 'electron';
 import {join} from 'path';
+
+import {remote, shell} from 'electron';
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
+
 import {ApplicationMenu, MenuItem} from 'electron-menu-react';
 
 import {updateConfig} from '../modules/config';

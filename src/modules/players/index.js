@@ -1,8 +1,9 @@
-import {remote} from 'electron';
 import {join} from 'path';
-import {readFile} from 'fs-extra';
+
+import {remote} from 'electron';
 
 // import chokidar from 'chokidar';
+import {readFile} from 'fs-extra';
 import 'rxjs/add/observable/bindNodeCallback';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/observable/merge';
