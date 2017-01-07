@@ -3,15 +3,13 @@ import React, {PropTypes} from 'react';
 import {keyframes, merge, style} from 'glamor';
 
 import Cell from './Cell';
+import Info from './Info';
 import Piece from './Piece';
 import {E, W, toArray} from '../oth';
 
 const boardContainer = style({
-  display: 'grid',
-  gridAutoRows: '10.25vmin', // 2*(8+1)+10.25*8=100
-  gridAutoColumns: '10.25vmin',
-  gridGap: '2vmin',
-  padding: '2vmin',
+  display: 'flex',
+  flexDirection: 'row',
   background: 'linear-gradient(60deg, #43A047, #26A69A)',
   backgroundSize: '400% 400%',
   animation: `${keyframes({
@@ -21,30 +19,41 @@ const boardContainer = style({
   })} 30s ease infinite`,
 });
 
-const disabledBoardContainer = merge(boardContainer, {
+const boardGrid = style({
+  display: 'grid',
+  gridAutoRows: '10.25vmin', // 2*(8+1)+10.25*8=100
+  gridAutoColumns: '10.25vmin',
+  gridGap: '2vmin',
+  padding: '2vmin',
+});
+
+const disabledBoardGrid = merge(boardGrid, {
   pointerEvents: 'none',
 });
 
 const Board = ({board, clickables, enabled, onClickVaildCell}) =>
-  <div {...enabled ? boardContainer : disabledBoardContainer}>
-    {toArray(board).map((piece, index) => {
-      const row = Math.floor(index / 8);
-      const column = index % 8;
-      return (
-        <Cell
-          onClick={
-            clickables.some(i => row === i.row && column === i.column) ?
-              onClickVaildCell :
-              undefined
-          }
-          row={row}
-          column={column}
-          key={`${row},${column}`}
-        >
-          {piece !== E ? <Piece flip={piece === W} /> : undefined}
-        </Cell>
-      );
-    })}
+  <div {...boardContainer}>
+    <div {...enabled ? boardGrid : disabledBoardGrid}>
+      {toArray(board).map((piece, index) => {
+        const row = Math.floor(index / 8);
+        const column = index % 8;
+        return (
+          <Cell
+            onClick={
+              clickables.some(i => row === i.row && column === i.column) ?
+                onClickVaildCell :
+                undefined
+            }
+            row={row}
+            column={column}
+            key={`${row},${column}`}
+          >
+            {piece !== E ? <Piece flip={piece === W} /> : undefined}
+          </Cell>
+        );
+      })}
+    </div>
+    <Info board={board} />
   </div>;
 
 Board.propTypes = {
