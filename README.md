@@ -12,7 +12,12 @@ npm start
 or
 ```
 npm run build
-npm run electron
+npm run gui
+```
+or
+```
+npm run build
+npm run cui
 ```
 
 ## Plugins

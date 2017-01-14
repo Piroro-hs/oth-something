@@ -1,6 +1,6 @@
 const {spawn} = require('child_process');
 const {EventEmitter} = require('events');
-const {resolve} = require('path');
+const {join, resolve} = require('path');
 
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
@@ -11,7 +11,7 @@ const compiler = webpack({
     './src/index.js',
   ],
   output: {
-    path: resolve('app'),
+    path: join(resolve('app'), 'gui'),
     filename: 'index.js',
   },
   module: {
@@ -37,6 +37,7 @@ compiler.plugin('done', () => {
 const server = new WebpackDevServer(compiler, {
   contentBase: 'app',
   // inline: true,
+  publicPath: '/gui/',
 });
 
 server.listen(8080);

@@ -42,7 +42,9 @@
   },
   "scripts": {
     "build": "node build",
+    "cui": "electron . cui",
     "electron": "electron .",
+    "gui": "electron .",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }

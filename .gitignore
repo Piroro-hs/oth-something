@@ -2,5 +2,7 @@ logs
 npm-debug.log*
 node_modules
 /plugins
-/app/index.js
+/app/gui/index.js
+/app/config.js
+/app/cui/cui.js
 !/app/config/plugins/node_modules

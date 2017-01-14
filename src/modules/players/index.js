@@ -1,7 +1,5 @@
 import {join} from 'path';
 
-import {remote} from 'electron';
-
 // import chokidar from 'chokidar';
 import {readFile} from 'fs-extra';
 import 'rxjs/add/observable/bindNodeCallback';
@@ -42,12 +40,12 @@ export function reloadPlayers() {
   return {type: RELOAD_PLAYERS};
 }
 
-function updatePlayersList(payload) {
+export function updatePlayersList(payload) {
   return {type: UPDATE_PLAYERS_LIST, payload};
 }
 
 export function updatePlayersEpic(action$) {
-  const jsonPath = join(remote.app.getPath('userData'), 'oth-config', 'plugins', 'package.json');
+  const jsonPath = join(CONFIG_PATH, 'plugins', 'package.json');
   // const readJsonObservable = Observable.bindNodeCallback(readJson); // It's broken.
   const readJsonObservable = Observable.bindNodeCallback(readFile, JSON.parse);
   return Observable.merge(
