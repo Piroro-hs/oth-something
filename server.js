@@ -1,6 +1,6 @@
 const {spawn} = require('child_process');
 const {EventEmitter} = require('events');
-const {join, resolve} = require('path');
+const {resolve} = require('path');
 
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
@@ -11,20 +11,21 @@ const compiler = webpack({
     './src/index.js',
   ],
   output: {
-    path: join(resolve('app'), 'gui'),
+    path: resolve('app', 'gui'),
     filename: 'index.js',
   },
   module: {
-    loaders: [{
-      test: /\.(js|jsx)/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-    }, {
-      test: /\.json/,
-      loader: 'json-loader',
-    }],
+    rules: [
+      {
+        test: /\.(js|jsx)/,
+        include: [
+          resolve(__dirname, 'src'),
+        ],
+        loader: 'babel-loader',
+      },
+    ],
   },
-  target: 'electron',
+  target: 'electron-renderer',
   devtool: 'source-map',
 });
 

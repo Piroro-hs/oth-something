@@ -5,10 +5,6 @@ const {app, BrowserWindow} = require('electron');
 
 const {accessSync: access, copySync: copy, writeFileSync: writeFile} = require('fs-extra');
 
-// const {default: installExtension, REDUX_DEVTOOLS} = require('electron-devtools-installer');
-//
-// installExtension(REDUX_DEVTOOLS);
-
 const CONFIG_PATH = join(app.getPath('userData'), 'oth-config');
 
 try {

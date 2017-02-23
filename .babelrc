@@ -2,10 +2,10 @@
   "presets": [
     ["env", {
       "targets": {
-        "node": 6.5
+        "node": 7.4
       },
       "loose": true,
-      "modules": "commonjs"
+      "modules": false
     }],
     "stage-3",
     "react"
